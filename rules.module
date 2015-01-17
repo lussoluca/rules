@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function rules_theme() {
+  return array(
+    'rules_debug_element' => [
+      'template' => 'rules_debug_element',
+      'variables' => [
+        'head' => NULL,
+        'link' => NULL,
+        'log' => NULL,
+      ]
+    ],
+  );
+}

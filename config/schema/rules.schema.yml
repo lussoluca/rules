@@ -109,3 +109,20 @@ rules_component.configuration.rules_action_set:
       label: 'Actions'
       sequence:
         - type: rules_component.configuration.[id]
+
+rules.config:
+  type: mapping
+  label: 'Rules configuration'
+  mapping:
+    rules_log_errors:
+      type: integer
+      label: 'Logging of Rules evaluation errors'
+    rules_debug_log:
+      type: boolean
+      label: 'Log debug information to the system log'
+    rules_debug:
+      type: boolean
+      label: 'Show debug information'
+    rules_log_level:
+      type: integer
+      label: 'Log level'

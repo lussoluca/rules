@@ -1,0 +1,4 @@
+rules_log_errors: warning
+rules_debug_log: false
+rules_debug: false
+rules_log_level: info

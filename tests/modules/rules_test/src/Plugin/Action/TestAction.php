@@ -24,7 +24,8 @@ class TestAction extends RulesActionBase {
    * {@inheritdoc}
    */
   public function execute() {
-    RulesLog::logger()->log('action called');
+    $logger = \Drupal::service('rules.log');
+    $logger->log('action called');
   }
 
 }

@@ -33,7 +33,8 @@ class ConfigEntityTest extends RulesDrupalTestBase {
 
     // Clear the log from any stale entries that are bleeding over from previous
     // tests.
-    $logger = RulesLog::logger();
+    /** @var \Drupal\rules\Engine\RulesLogInterface $logger */
+    $logger = $this->container->get('rules.log');
     $logger->clear();
   }
 
@@ -74,7 +75,9 @@ class ConfigEntityTest extends RulesDrupalTestBase {
     $expression->execute();
 
     // Test that the action logged something.
-    $log = RulesLog::logger()->get();
+    /** @var \Drupal\rules\Engine\RulesLogInterface $logger */
+    $logger = $this->container->get('rules.log');
+    $log = $logger->get();
     $this->assertEqual($log[0][0], 'action called');
   }
 
@@ -100,7 +103,9 @@ class ConfigEntityTest extends RulesDrupalTestBase {
     $expression->execute();
 
     // Test that the action logged something.
-    $log = RulesLog::logger()->get();
+    /** @var \Drupal\rules\Engine\RulesLogInterface $logger */
+    $logger = $this->container->get('rules.log');
+    $log = $logger->get();
     $this->assertEqual($log[0][0], 'action called');
   }
 
